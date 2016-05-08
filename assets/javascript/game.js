@@ -56,7 +56,57 @@ $(document).ready(function(){
 				return false;
 
 			}); // Ends on click addGif function
-		} // Ends searchClick fucntion
+		}, // Ends searchClick fucntion
+
+		// on click for gif buttons to populate gifs from api
+
+		apiCall: function() {
+
+			// onclick for buttons to produce gifs
+
+			$(".char").on("click", function() {
+
+				// variable for character name
+
+				var name = $(this).attr('data-name');
+
+				// variable for url of giphy
+
+				var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+				// API call
+
+				$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+
+				
+
+					console.log(response);
+
+					for (var i = 0; i < response.data.length; i++) {
+
+						// create div where gif, rating, etc will be stored
+
+						var div = $("<div class='character'>");
+
+						var rating = response.data[i].rating;
+
+						var p1 = $('<p>').text( "Rating: " + rating);
+
+						div.append(p1);
+
+						var image = $('<img>').attr('src', response.data[i].images.fixed_height.url);
+
+						div.append(image);
+
+						$("#gifView").prepend(div);
+
+					} // End of for loop
+
+				
+				}); // End of done function on api call
+
+			}); // end of on click to produce gifs
+		}, // End apiCall function
 
 	} // Ends gif object
 
@@ -66,11 +116,11 @@ $(document).ready(function(){
 
 	// on click to add a new button for search and then repopulate the array of buttons
 
-	// Calls on click for adding a gif
-
 	gif.searchClick();
 
 	// on click for gif buttons to populate gifs from api
+
+	gif.apiCall();
 
 	// on click for gifs to start and stop
 	
