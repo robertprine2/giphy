@@ -64,7 +64,7 @@ $(document).ready(function(){
 
 			// onclick for buttons to produce gifs
 
-			$(".char").on("click", function() {
+			$("#buttonsView").on("click", ".char", function() {
 
 				// variable for character name
 
