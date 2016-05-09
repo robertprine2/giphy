@@ -2,8 +2,23 @@ body {
 	text-align: center;
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
 	background-position: center;
+}
+
+.character {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+.gif {
+	vertical-align: top;
+	margin-top: 15px;
+}
+
+p {
+	vertical-align: top;
+	margin-top: 15px;
 }
 
 /* Social Icons */
