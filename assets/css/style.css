@@ -4,6 +4,38 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+h1 {
+	font-family: 'Droid Serif', serif;
+	font-size: 40px;
+	color: white;
+	margin: 15px;
+}
+
+button {
+	background-color: #B7C68B;
+	margin: 15px;
+}
+
+button:hover {
+	color: #DED29E;
+}
+
+label {
+	margin: 15px;
+}
+
+#addGif:hover {
+	color: #DED29E;
+}
+
+#addGif {
+	background-color: #B7C68B;
+	margin: 15px;
 }
 
 .character {
