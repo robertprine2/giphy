@@ -51,6 +51,10 @@ $(document).ready(function(){
 
 				$("#gif-input").val('');
 
+				// on click for gifs to start and stop
+
+				gif.move();
+
 				// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
 
 				return false;
@@ -150,5 +154,6 @@ $(document).ready(function(){
 
 	// on click for gifs to start and stop
 	
+	gif.move();
 
 }); // Ends document.ready function
