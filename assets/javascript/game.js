@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 				// variable for url of giphy
 
-				var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=10";
+				var queryURL = "http://api.giphy.com/v1/gifs/search?q=marvel+" + name + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 				// API call
 
@@ -94,19 +94,45 @@ $(document).ready(function(){
 
 						div.append(p1);
 
-						var image = $('<img>').attr('src', response.data[i].images.fixed_height.url);
+						var still = $('<img>').attr('src', response.data[i].images.downsized_still.url).attr("data-still", response.data[i].images.downsized_still.url).attr("data-animate", response.data[i].images.downsized.url).attr("data-state", "still").addClass("gif");
 
-						div.append(image);
+						div.append(still);
 
 						$("#gifView").prepend(div);
 
 					} // End of for loop
 
+					gif.move();
 				
 				}); // End of done function on api call
 
 			}); // end of on click to produce gifs
 		}, // End apiCall function
+
+		// on click for gifs to start and stop
+
+		move: function() {
+			$("#gifView").on("click", ".gif", function() {
+
+				var state = $(this).attr("data-state");
+
+	            var animate = $(this).attr("data-animate");
+
+	            var still = $(this).attr("data-still");
+
+	            if (state == "still") {
+	                $(this).attr("data-state", "animate");
+	                $(this).attr("src", animate);
+	            } // end of if statement
+
+	            else {
+	                $(this).attr("data-state", "still");
+	                $(this).attr("src", still);
+	            } // end of else statement
+
+
+			}); // End of on click function
+		} // End of move function
 
 	} // Ends gif object
 
