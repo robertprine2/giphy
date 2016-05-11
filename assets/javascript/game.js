@@ -53,7 +53,7 @@ $(document).ready(function(){
 
 				// on click for gifs to start and stop
 
-				gif.move();
+				// gif.move();
 
 				// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
 
@@ -106,7 +106,7 @@ $(document).ready(function(){
 
 					} // End of for loop
 
-					gif.move();
+					// gif.move();
 				
 				}); // End of done function on api call
 

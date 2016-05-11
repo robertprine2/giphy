@@ -1,8 +1,6 @@
 body {
 	text-align: center;
 	background-image: url("../images/background.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 20px;
@@ -31,6 +29,10 @@ label {
 
 #addGif:hover {
 	color: #DED29E;
+}
+
+#gif-input {
+	color: black;
 }
 
 #addGif {
